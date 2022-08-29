@@ -1,0 +1,125 @@
+html, body{
+    height: 100%;
+}
+
+body{
+    background: #0d5155;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 1em;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+}
+
+input[type="radio"]{
+    opacity: 0;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    position: absolute;
+}
+
+#anwsers{
+    display: flex;
+    flex-direction: column;
+    padding: .5em 2em;
+    background: #0d5155;
+    color: #fefff0;
+    border-radius: 10px;
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, .5);
+}
+
+#congrats{
+    opacity: 0;
+    transition: .5s opacity;
+}
+
+#congrats2{
+    opacity: 0;
+    transition: .5s opacity;
+}
+
+#congrats3{
+    opacity: 0;
+    transition: .5s opacity;
+}
+
+#congrats4{
+    opacity: 0;
+    transition: .5s opacity;
+}
+
+.ans{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ans:not(:last-child){
+    border-bottom: 1px solid white;
+}
+
+label{
+    position: relative;
+    font-size: 1.5em;
+    flex-grow: 1;
+    margin: 1em 0;
+}
+
+label:first-child:after, label:last-child:after{
+    content: "";
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+    top: 5%;
+    width: 1em ;
+    height: 1em;
+    background-color: rgb(0, 0, 0);
+}
+label:first-child{
+    padding-left: 2em;
+    margin-right: 1em;
+}
+
+label:last-child{
+    padding-right: 2em;
+    margin-left: 1em;
+}
+
+label:first-child::after{
+    left: 0;
+}
+
+label:last-child::after{
+    right: 0;
+}
+
+#length:checked ~ main [for="length"]:first-child:after,
+#lenght:checked ~ main [for="lenght"]:last-child:after,
+#width:checked ~ main [for="width"]:first-child:after,
+#widht:checked ~ main [for="widht"]:last-child:after,
+#heigth:checked ~ main [for="heigth"]:first-child:after,
+#height:checked ~ main [for="height"]:last-child:after,
+#moyzeys:checked ~ main [for="moyzeys"]:first-child:after,
+#moyzeyzy:checked ~ main [for="moyzeyzy"]:last-child:after{
+
+    background-color: rgb(255, 0, 0);
+}
+
+#length:checked ~ #width:checked ~ #height:checked ~ #moyzeys:checked ~ main #congrats{
+    transition: .5s opacity;
+    opacity: 1;
+}
+
+#length:checked ~ #widht:checked ~ #height:checked ~ #moyzeyzy:checked ~ main #congrats2{
+    transition: .5s opacity;
+    opacity: 1;
+}
